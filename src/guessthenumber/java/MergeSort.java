@@ -14,6 +14,8 @@ public class MergeSort
     public MergeSort(int[] inArray)
     {
         arrayToSort = inArray;
+        
+        doMergeSort(0, 9);
     }
     
     public void doMergeSort(int inLeftStart, int inRightEnd)

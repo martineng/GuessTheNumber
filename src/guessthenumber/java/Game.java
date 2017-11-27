@@ -12,7 +12,13 @@ public class Game
     // Null Constructor
     public Game()
     {
+        MergeSort theMergeSort = new MergeSort();
+        
         initializeNumberArray();
+        
+        theMergeSort = new MergeSort(numberArray);
+        numberArray = theMergeSort.getArrayToSort();
+        
         initializeEmptySlots();
     }
     
@@ -73,6 +79,10 @@ public class Game
     
     private void initializeEmptySlots()
     {
+        //Simple rule"
+        // except for the first, middle and last position of the array,
+        // randomly select an empty slot before and after the middle.
+        
         setEmpty1(generateRandomNumber(2));
         setEmpty2(3);
         setEmpty3(generateRandomNumber(4)+4);
