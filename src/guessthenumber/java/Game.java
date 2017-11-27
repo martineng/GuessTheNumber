@@ -59,6 +59,11 @@ public class Game
         return numberArray[inIndex];
     }
     
+    public int[] getNumberArray()
+    {
+        return numberArray;
+    }
+    
     // Generate a random number between 0 to inRange
     private int generateRandomNumber(int inRange)
     {

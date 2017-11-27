@@ -123,10 +123,38 @@ public class GameLauncher
         }
         else
         {
+            BinarySearch theBinarySearch = new BinarySearch(theGame.getNumberArray(), 0, 9);
+            searchResult = theBinarySearch.doBinarySearch(inAnswer);
             
-        }
+            if (searchResult == theGame.getEmpty1())
+            {
+                isEmpty1Correct = true;
+                isResultMatch = true;
+            }
+            else if (searchResult == theGame.getEmpty2())
+            {
+                isEmpty2Correct = true;
+                isResultMatch = true;
+            }
+            else if (searchResult == theGame.getEmpty3())
+            {
+                isEmpty3Correct = true;
+                isResultMatch = true;
+            } //END IF
+            
+            // Output message accordingly
+            if (isResultMatch)
+            {
+                System.out.println("Slot " + searchResult +1 + " is correct!");
+            }
+            else
+            {
+                System.out.println("Good Guess! But WRONG!!");
+            } // END IF
+            
+        } // END IF
         
-        return false;
+        return isResultMatch;   
     }
     
     protected boolean isAllCorrect()
@@ -142,5 +170,16 @@ public class GameLauncher
         {
             return false;
         }
+    } // END isAllCorrect()
+    
+    protected void runGame()
+    {
+        // The program will not exit the loop
+        // if and only if all the guesses are guessed correctly
+        do
+        {
+            printQuiz();
+            isAnswer(promptGuess());
+        } while(!isAllCorrect());
     }
 }
