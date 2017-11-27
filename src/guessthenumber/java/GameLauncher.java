@@ -100,8 +100,8 @@ public class GameLauncher
     {
         int userGuess = 0;
         
-        System.out.println("Etner 1010 to exit");
-        System.out.println("Enter Your Guess!");
+        System.out.println("\nEtner 1010 to exit");
+        System.out.print("Enter Your Guess! :> ");
         userGuess = inputScanner.nextInt();
         return userGuess;
     }

@@ -9,7 +9,7 @@ public class BinarySearch
     
     public BinarySearch()
     {
-        
+        // EMPTY
     }
     
     public BinarySearch(int[] inArray, int inFirst, int inLast)
